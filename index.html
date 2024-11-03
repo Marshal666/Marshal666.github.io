@@ -1,1 +1,278 @@
-"Hello World" 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AK Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1, h2 {
+            color: #222;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        .author {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .author h1 {
+            font-size: 2rem;
+        }
+
+        .author-description {
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        .project {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .project h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .project-meta {
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .project-gallery {
+            display: flex;
+            overflow-x: auto;
+            gap: 10px;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+
+        .project-gallery img {
+            height: 350px;
+			max-width: 720px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .project-summary {
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+
+        .project-details {
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .project-link {
+            color: #1e90ff;
+            text-decoration: none;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Scrollbar styling for webkit-based browsers */
+        .project-gallery::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .project-gallery::-webkit-scrollbar-track {
+            background: #ddd;
+            border-radius: 4px;
+        }
+
+        .project-gallery::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+		
+		.overlay {
+			display: none; /* Hidden by default */
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
+			justify-content: center;
+			align-items: center;
+			z-index: 1000; /* Sits on top of other content */
+		}
+
+		.overlay img {
+			max-width: 90%; /* Responsive image size */
+			max-height: 90%;
+			border-radius: 8px;
+			box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+			cursor: zoom-out; /* Indicates that clicking will close the image */
+		}
+		
+    </style>
+</head>
+<script>
+    // Function to open the overlay with the clicked image
+    function openOverlay(src) {
+        const overlay = document.getElementById("imageOverlay");
+        const overlayImage = document.getElementById("overlayImage");
+        overlayImage.src = src; // Set the source of the overlay image
+        overlay.style.display = "flex"; // Show the overlay
+    }
+
+    // Function to close the overlay
+    function closeOverlay() {
+        document.getElementById("imageOverlay").style.display = "none";
+    }
+</script>
+<body>
+<div class="container">
+    <!-- Author Section -->
+    <div class="author">
+        <h1>Adam Kolar</h1>
+        <p class="author-description">Game developer (with focus on coding) with 10 years of experience in creating video games. Skilled in Unity, Blender, and various design tools.</p>
+    </div>
+
+    <!-- Projects Section -->
+    <div class="projects">
+        <div class="project">
+            <h2>ZR</h2>
+            <p class="project-meta">Years: 2017-2018 | Team Size: 1 | Roles: Programming, Game Design, 3D Modelling - Basically Everything | Engine: Unity</p>
+            <div class="project-gallery">
+                <img src="project1_img1.png" alt="Project Image 1" onclick="openOverlay(this.src)">
+                <img src="project1_img2.png" alt="Project Image 2" onclick="openOverlay(this.src)">
+                <img src="project1_img3.png" alt="Project Image 3" onclick="openOverlay(this.src)">
+                <img src="project1_img4.png" alt="Project Image 4" onclick="openOverlay(this.src)">
+                <img src="project1_img5.png" alt="Project Image 5" onclick="openOverlay(this.src)">
+                <img src="project1_img6.png" alt="Project Image 6" onclick="openOverlay(this.src)">
+                <img src="project1_img7.png" alt="Project Image 7" onclick="openOverlay(this.src)">
+            </div>
+            <p class="project-summary">Abbreviation for "Završni Rad". It was made for a final project for my highschool. This game is probably a first complete game I made, it's a simple 3D platformer where player is a dinosaur. Special thing about this game is that it had a level editor so players could make their own levels and even add new 3D objects into the game.</p>
+            <p class="project-details"><a href="https://github.com/Marshal666/ZR" class="project-link">Source code & Game download</a></p>
+        </div>
+        <div class="project">
+            <h2>Roby</h2>
+            <p class="project-meta">Years: 2020-2021 | Team Size: 6 | Roles: Team Leader and Main Programmer | Engine: Unity</p>
+            <div class="project-gallery">
+                <img src="project2_img1.png" alt="Project Image 1" onclick="openOverlay(this.src)">
+                <img src="project2_img2.png" alt="Project Image 2" onclick="openOverlay(this.src)">
+                <img src="project2_img3.png" alt="Project Image 3" onclick="openOverlay(this.src)">
+                <img src="project2_img4.png" alt="Project Image 4" onclick="openOverlay(this.src)">
+                <img src="project2_img5.png" alt="Project Image 5" onclick="openOverlay(this.src)">
+                <img src="project2_img6.png" alt="Project Image 6" onclick="openOverlay(this.src)">
+            </div>
+            <p class="project-summary">Another simple platformer made for university subject called "Projekt R". First time I worked on a game in a team too. Others in the team had somewhat limited experience in Unity compared to me so I stepped up and took the role of a team leader.</p>
+            <p class="project-details"><a href="https://gitlab.com/AdamK0l4r/projektr" class="project-link">Source code</a></p>
+			<p class="project-details"><a href="https://mega.nz/file/pwEigZIY#s1J3Wxl33Efg7QghNBAYy0E-it_bo1QQxx9mJP1Bed8" class="project-link">Game download</a></p>
+        </div>
+		
+		<div class="project">
+            <h2>Pirate Battle</h2>
+            <p class="project-meta">Years: 2022-2023 | Team Size: 5 | Roles: Programmer and Game Designer | Engine: Unity + Photon Pun networking library</p>
+            <div class="project-gallery">
+                <img src="project3_img1.png" alt="Project Image 1" onclick="openOverlay(this.src)">
+                <img src="project3_img2.png" alt="Project Image 2" onclick="openOverlay(this.src)">
+                <img src="project3_img3.png" alt="Project Image 3" onclick="openOverlay(this.src)">
+                <img src="project3_img4.png" alt="Project Image 4" onclick="openOverlay(this.src)">
+                <img src="project3_img5.png" alt="Project Image 5" onclick="openOverlay(this.src)">
+                <img src="project3_img6.png" alt="Project Image 6" onclick="openOverlay(this.src)">
+            </div>
+            <p class="project-summary">2D multiplayer game where players are pirate ships fighting each other.</p>
+			<p class="project-details"><a href="https://mega.nz/file/8lFHAbpQ#PBypmec94_a_Z4s_kVj9yJwmSm-Cc6Vg6S2d4qK2Q3E" class="project-link">Game download</a></p>
+        </div>
+		
+		<div class="project">
+            <h2>Prototype Project/Demo: Marching Cubes Algorithm</h2>
+            <p class="project-meta">Year: 2022 | Team Size: 1 | Roles: Programmer | Engine: Unity</p>
+            <div class="project-gallery">
+                <img src="project4_img1.png" alt="Project Image 1" onclick="openOverlay(this.src)">
+                <img src="project4_img2.png" alt="Project Image 2" onclick="openOverlay(this.src)">
+                <img src="project4_img3.png" alt="Project Image 3" onclick="openOverlay(this.src)">
+                <img src="project4_img4.png" alt="Project Image 4" onclick="openOverlay(this.src)">
+                <img src="project4_img5.png" alt="Project Image 5" onclick="openOverlay(this.src)">
+                <img src="project4_img6.png" alt="Project Image 6" onclick="openOverlay(this.src)">
+            </div>
+            <p class="project-summary">Implementation of Marching Cubes algorithm in a simple demo game where player can dig in terrain or blow it up using explosives.</p>
+			<p class="project-details"><a href="https://github.com/Marshal666/RA-LABS" class="project-link">Source code & Game download</a></p>
+        </div>
+		
+		<div class="project">
+            <h2>Prototype Project: Tank Fight</h2>
+            <p class="project-meta">Years: 2023-2024 | Team Size: 1 | Role: Programmer and Game Designer | Engine: Unity + Photon Fusion networking library</p>
+            <div class="project-gallery">
+                <iframe width="720" height="320" src="https://www.youtube.com/embed/IBuEq63yAX8?si=bKwxj_MbqXj2xBQ8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <img src="project5_img1.png" alt="Project Image 1" onclick="openOverlay(this.src)">
+                <img src="project5_img2.png" alt="Project Image 2" onclick="openOverlay(this.src)">
+                <img src="project5_img3.png" alt="Project Image 3" onclick="openOverlay(this.src)">
+                <img src="project5_img4.png" alt="Project Image 4" onclick="openOverlay(this.src)">
+            </div>
+            <p class="project-summary">3D tank game somewhat similar to War Thunder. It features full multiplayer support (up to 4 players in this case) and rather detailed damage model. It was made as a final project for getting my masters degree.</p>
+			<p class="project-details"><a href="https://github.com/Marshal666/DipRadProjFusion" class="project-link">Source code & Game download</a></p>
+        </div>
+		
+		<div class="project">
+            <h2>First (and unfinished) Project: Cube</h2>
+            <p class="project-meta">Years: 2014-2015 | Team Size: " | Roles: Programmer, Game Designer and 3D Modeller | Engine: Unity</p>
+            <div class="project-gallery">
+                <img src="project6_img1.jpg" alt="Project Image 1" onclick="openOverlay(this.src)">
+                <img src="project6_img2.jpg" alt="Project Image 2" onclick="openOverlay(this.src)">
+                <img src="project6_img3.jpg" alt="Project Image 3" onclick="openOverlay(this.src)">
+                <img src="project6_img4.jpg" alt="Project Image 4" onclick="openOverlay(this.src)">
+                <img src="project6_img5.jpg" alt="Project Image 5" onclick="openOverlay(this.src)">
+                <img src="project6_img6.jpg" alt="Project Image 6" onclick="openOverlay(this.src)">
+				<img src="project6_img7.jpg" alt="Project Image 7" onclick="openOverlay(this.src)">
+                <img src="project6_img8.jpg" alt="Project Image 8" onclick="openOverlay(this.src)">
+                <img src="project6_img9.jpg" alt="Project Image 9" onclick="openOverlay(this.src)">
+                <img src="project6_img10.jpg" alt="Project Image 10" onclick="openOverlay(this.src)">
+				<img src="project6_img11.jpg" alt="Project Image 11" onclick="openOverlay(this.src)">
+                <img src="project6_img12.jpg" alt="Project Image 12" onclick="openOverlay(this.src)">
+                <img src="project6_img13.jpg" alt="Project Image 13" onclick="openOverlay(this.src)">
+            </div>
+            <p class="project-summary">A lot of game developers never finish their first (and often very ambitious) project. Cube is one of the examples of that. It's a mobile 3D platformer game that's actually still playable and it works fine more or less despite being compiled with what is now an ancient version of Unity. It has two leves, with second one even having a cutscene and a boss fight. Despite the game never being finished, a lot was accomplished, especially if one cosiders a fact that a 14-15 year old was working on it, with a bit of help on level design from a friend.</p>
+        </div>
+		
+		<div class="project">
+            <h2>Jumpy Cube</h2>
+            <p class="project-meta">Year: 2015 | Team Size: 1 | Roles: Programmer, Game Designer and 3D Modeller | Engine: Unity</p>
+            <div class="project-gallery">
+                <img src="project7_img1.png" alt="Project Image 1" onclick="openOverlay(this.src)">
+            </div>
+            <p class="project-summary">Infinite runner (or in this case, a jumper) game made for Android, it was fairly finished game. However, 15 year old me decided to clean up disk space and thus the project was lost forever. The only remaining thing I have of it is this image.</p>
+        </div>
+		
+    </div>
+</div>
+
+<div id="imageOverlay" class="overlay" onclick="closeOverlay()">
+    <img id="overlayImage" src="" alt="Fullscreen Image">
+</div>
+
+</body>
+</html>
